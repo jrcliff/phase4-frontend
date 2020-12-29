@@ -4,7 +4,7 @@ import Usercards from '../containers/Usercards'
 export default class RenderHome extends Component {
     renderUsers = () => {
         let usersArr = this.props.users
-        return usersArr.map((user, index) => <Usercards user={user} key={index}/>)
+        return usersArr.map((user, index) => <Usercards user={user} profilepic={user.profile_pic} key={user.id}/>)
     }
 
 
