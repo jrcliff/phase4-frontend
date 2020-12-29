@@ -6,6 +6,7 @@ export default class RenderTimeline extends Component {
         let postsArr = this.props.posts
         return postsArr.map((post) => <Timeline post={post} key={post.id}/>)
     }
+    
     render() {
         return (
             <div>

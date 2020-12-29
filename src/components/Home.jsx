@@ -10,19 +10,22 @@ export default class Home extends Component {
     }
 
     componentDidMount(){
-        let url = "http://localhost:3000/users"
-        fetch(url)
-        .then(response => response.json())
-        .then(usersArr => this.setState({
-            users: usersArr
-        }))
+        // let url = "http://localhost:3000/users"
+        // fetch(url)
+        // .then(response => response.json())
+        // .then(usersArr => this.setState({
+        //     users: usersArr
+        // }))
 
-        let posturl = "http://localhost:3000/posts"
-        fetch(posturl)
-        .then(resp => resp.json())
-        .then(postArr => this.setState({
-            posts: postArr
-        }))
+        // let posturl = "http://localhost:3000/posts"
+        // fetch(posturl)
+        // .then(resp => resp.json())
+        // .then(postArr => this.setState({
+        //     posts: postArr
+        // }))
+
+        let url = "http://localhost:3000/userposts"
+        
     }
 
 
