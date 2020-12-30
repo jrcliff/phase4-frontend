@@ -1,5 +1,6 @@
 import './App.css';
-import Home from './components/Home'
+import Home from './containerComponents/Home'
+import LoginPage from './containerComponents/LoginPage'
 import { Button } from 'semantic-ui-react'
 
 function App() {
@@ -10,7 +11,8 @@ function App() {
     <div className="App">
       <header className="App-header">
       <Button>Click Here</Button>
-       <Home />
+       <Home /> 
+       <LoginPage />
       </header>
       
     </div>
