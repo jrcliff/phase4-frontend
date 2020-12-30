@@ -1,6 +1,6 @@
 import './App.css';
-import Home from './containerComponents/Home'
-import LoginPage from './containerComponents/LoginPage'
+import Home from './container/Home'
+import LoginPage from './container/LoginPage'
 
 function App() {
 

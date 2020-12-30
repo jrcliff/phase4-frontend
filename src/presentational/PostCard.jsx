@@ -4,7 +4,7 @@ import CommentCard from './CommentCard'
 export default function PostCard() {
     return (
         <div>
-            
+            <CommentCard />
         </div>
     )
 }
