@@ -41,7 +41,7 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-                <RenderHome />
+                <RenderHome users={this.state.users}/>
                 <RenderTimeline users={this.state.users}/>
                 <LoginForm login={this.loginForm}/>
             </div>

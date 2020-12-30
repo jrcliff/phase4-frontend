@@ -8,9 +8,10 @@ export default class Usercards extends Component {
   
   fileUploadHandler = () => {
     let fd = new FormData()
-    fd.append('image', this.state.selectedFile, this.state.selectedFile.name)
-    fetch(`http://localhost:3000/users/1`, {method: 'POST'})
-    .then(res => console.log(res))
+    fd.append('file', this.state.selectedFile)
+    fetch(`http://localhost:3000/users/${this.props.user.user.id}`, {method: 'PATCH', body: fd})
+    .then(res => res.json())
+    .then(pp => console.log(pp))
   }
 
   fileHandler = event => {
@@ -23,9 +24,9 @@ export default class Usercards extends Component {
         <Card>
           <input type='file' onChange={this.fileHandler} />
           <button onClick={this.fileUploadHandler}>Upload</button>
-          <Image src={this.props.user.profilepic} wrapped ui={false} />
+          <img src={this.state.avatar} wrapped ui={false} />
           <Card.Content>
-            <Card.Header>{console.log(this.props.user.username)}</Card.Header>
+            <Card.Header>{this.props.user.user.username}</Card.Header>
             <Card.Meta>
               <span className="date">Joined in 2015</span>
             </Card.Meta>
