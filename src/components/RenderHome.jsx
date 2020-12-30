@@ -11,7 +11,7 @@ export default class RenderHome extends Component {
     render() {
         return (
             <div>
-                {/* {this.renderUsers()} */}
+                {this.props.users.map((user, index) => <Usercards user={user} id={user.id} key={index}/> )}
             </div>
         )
     }
