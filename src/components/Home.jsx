@@ -1,7 +1,8 @@
 import React, { Component } from 'react'
 import RenderHome from './RenderHome'
-import Timeline from '../containers/Timeline'
 import RenderTimeline from './RenderTimeline'
+import LoginForm from '../containers/LoginForm'
+
 
 export default class Home extends Component {
     state = {
@@ -10,8 +11,8 @@ export default class Home extends Component {
     }
 
     componentDidMount(){
-        // let url = "http://localhost:3000/users"
-        // fetch(url)
+        // let urll = "http://localhost:3000/users"
+        // fetch(urll)
         // .then(response => response.json())
         // .then(usersArr => this.setState({
         //     users: usersArr
@@ -32,12 +33,17 @@ export default class Home extends Component {
         }))
     }
 
+    loginForm = (username) => {
+        
+    }
+
 
     render() {
         return (
             <div>
                 <RenderHome />
                 <RenderTimeline users={this.state.users}/>
+                <LoginForm login={this.loginForm}/>
             </div>
         )
     }

@@ -25,7 +25,7 @@ export default class Usercards extends Component {
           <button onClick={this.fileUploadHandler}>Upload</button>
           <Image src={this.props.user.profilepic} wrapped ui={false} />
           <Card.Content>
-            <Card.Header>{this.props.user.username}</Card.Header>
+            <Card.Header>{console.log(this.props.user.username)}</Card.Header>
             <Card.Meta>
               <span className="date">Joined in 2015</span>
             </Card.Meta>
