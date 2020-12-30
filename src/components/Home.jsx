@@ -25,15 +25,19 @@ export default class Home extends Component {
         // }))
 
         let url = "http://localhost:3000/userposts"
-        
+        fetch(url)
+        .then(resp => resp.json())
+        .then(usersArr => this.setState({
+            users: usersArr
+        }))
     }
 
 
     render() {
         return (
             <div>
-                <RenderHome users={this.state.users} posts={this.state.posts}/>
-                <RenderTimeline posts={this.state.posts} users={this.state.users}/>
+                <RenderHome />
+                <RenderTimeline users={this.state.users}/>
             </div>
         )
     }
