@@ -6,8 +6,7 @@ import LoginForm from '../containers/LoginForm'
 
 export default class Home extends Component {
     state = {
-        users: [],
-        posts: []
+        users: []
     }
 
     componentDidMount(){
@@ -34,16 +33,16 @@ export default class Home extends Component {
     }
 
     loginForm = (username) => {
-        
+        console.log(username)
     }
 
 
     render() {
         return (
             <div>
+                <LoginForm login={this.loginForm}/>
                 <RenderHome />
                 <RenderTimeline users={this.state.users}/>
-                <LoginForm login={this.loginForm}/>
             </div>
         )
     }

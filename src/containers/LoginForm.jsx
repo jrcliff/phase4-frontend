@@ -8,7 +8,7 @@ export default function LoginForm(props) {
         <Grid textAlign='center' style={{ height: '100vh' }} verticalAlign='middle'>
         <Grid.Column style={{ maxWidth: 450 }}>
           <Header as='h2' color='blue' textAlign='center'>
-             Log-in to your account
+             Welcome to Gamerbook!
           </Header>
           <Form size='large' onChange={(event) => props.login(event.target.value)}>
             <Segment stacked>
