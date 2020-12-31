@@ -3,15 +3,16 @@ import PostCard from "../presentational/PostCard";
 
 
 export default class Timeline extends Component {
-    renderUsers = () => {
-        let users = this.props.users
-        return users.map((user, index) => <PostCard user={user} key={index}/>)
-    }
+    // renderUsers = () => {
+    //     let users = this.props.users
+    //     console.log(users);
+    //     return this.props.users.map((user, index) => <PostCard user={user} key={index}/>)
+    // }
 
   render() {
     return (
       <div>
-        {this.renderUsers()}
+        {this.props.users.map((user, index) => <PostCard user={user} key={index}/>)}
       </div>
     );
   }
