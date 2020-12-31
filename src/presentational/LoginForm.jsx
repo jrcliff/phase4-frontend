@@ -1,7 +1,18 @@
 import React, { Component } from "react";
-import { Button, Form, Grid, Header, Message, Segment } from 'semantic-ui-react'
+import {
+  Button,
+  Form,
+  Grid,
+  Header,
+  Message,
+  Segment,
+} from "semantic-ui-react";
 
 export default class loginForm extends Component {
+  state = {
+    username: "",
+  };
+
   render() {
     return (
       <Grid
@@ -15,7 +26,7 @@ export default class loginForm extends Component {
           </Header>
           <Form
             size="large"
-            onChange={(event) => this.props.loginForm(event.target.value)}
+            // onSubmit={(event) => this.props.loginForm(event.target.value)}
           >
             <Segment stacked>
               <Form.Input
@@ -23,6 +34,8 @@ export default class loginForm extends Component {
                 icon="user"
                 iconPosition="left"
                 placeholder="Username"
+                onChange={(event) => this.props.loginForm(event.target.value)}
+                // onSubmit={(event) => this.props.loginForm(event.target.value)}
               />
               {/* <Form.Input
                     fluid
