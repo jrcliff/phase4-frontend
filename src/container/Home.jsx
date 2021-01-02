@@ -5,24 +5,29 @@ import Profile from './Profile'
 export default class Home extends Component {
 
     state = {
-        users: []
+        users: [],
+        posts: []
     }
 
     componentDidMount(){
-        let url = "http://localhost:3000/userposts"
+        let url = "http://localhost:3000/users"
         fetch(url)
         .then(resp => resp.json())
-        .then(usersAndPosts => this.setState({
-            users: usersAndPosts
+        .then(users => this.setState({
+            users: users
         }))
 
         let posturl = "http://localhost:3000/comments"
+        let postsUrl = 'http://localhost:3000/posts'
+        fetch(postsUrl)
+        .then(res => res.json())
+        .then(postArr => this.setState({posts: postArr}))
     }
 
     render() {
         return (
             <div>
-                <Timeline users={this.state.users}/>
+                <Timeline users={this.state.users} posts={this.state.posts}/>
                 <Profile />
             </div>
         )

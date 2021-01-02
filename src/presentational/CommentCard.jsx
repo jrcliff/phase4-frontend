@@ -1,7 +1,7 @@
 import React from "react";
 import { Button, Comment, Form, Header } from "semantic-ui-react";
 
-export default function CommentCard() {
+export default function CommentCard(props) {
     
 
   return (
@@ -13,8 +13,8 @@ export default function CommentCard() {
             <img src="/images/avatar/small/matt.jpg" />
           </div> */}
           <div class="content">
-            <a class="author">Matt</a>
-            <div class="text">How artistic!</div>
+            <a class="author">{props.comment.user.username}</a>
+            <div class="text">{props.comment.body}</div>
             <div class="actions">
               <a class="">Reply</a>
             </div>

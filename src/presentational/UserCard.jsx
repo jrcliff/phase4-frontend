@@ -2,7 +2,12 @@ import React, { Component } from 'react'
 import { Card, Icon, Image } from "semantic-ui-react";
 
 export default class UserCard extends Component {
+  friendCount(){
+    let count = this.props.user.frienders.length
+    console.log(count)
+  }
     render() {
+      
         return (
             <div>
             <Card>
@@ -19,7 +24,7 @@ export default class UserCard extends Component {
               <Card.Content extra>
                 <a>
                   <Icon name="user" />
-                  {console.log(this.props.user.friendships)}
+                  {}
                 </a>
               </Card.Content>
             </Card>
