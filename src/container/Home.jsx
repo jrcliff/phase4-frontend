@@ -17,18 +17,18 @@ export default class Home extends Component {
             users: users
         }))
 
-        let posturl = "http://localhost:3000/comments"
         let postsUrl = 'http://localhost:3000/posts'
         fetch(postsUrl)
         .then(res => res.json())
         .then(postArr => this.setState({posts: postArr}))
     }
 
+
     render() {
         return (
             <div>
-                <Timeline users={this.state.users} posts={this.state.posts}/>
                 <Profile />
+                <Timeline users={this.state.users} addCommentHandler={this.handleAddComment} posts={this.state.posts}/>
             </div>
         )
     }
