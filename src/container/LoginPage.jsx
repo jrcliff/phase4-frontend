@@ -9,11 +9,11 @@ export default class LoginPage extends Component {
     }
 
     componentDidMount(){
-        let url = "http://localhost:3000/userposts"
+        let url = "http://localhost:3000/users"
         fetch(url)
         .then(resp => resp.json())
-        .then(usersAndPosts => this.setState({
-            users: usersAndPosts
+        .then(users => this.setState({
+            users: users
         }))
     }
 

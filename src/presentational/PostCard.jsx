@@ -8,6 +8,7 @@ export default function PostCard(props) {
     //     let postsArr = props.user.posts
     //     return postsArr.map((post) => <Item.Description> {post.body}</Item.Description>)
     // }
+    
   return (
     <div className="post">
       <Item.Group link>
