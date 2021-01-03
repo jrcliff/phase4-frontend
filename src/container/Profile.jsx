@@ -9,7 +9,7 @@ export default class Profile extends Component {
         }
      
     componentDidMount(){
-        fetch('http://localhost:3000/users/9')
+        fetch('http://localhost:3000/users/1')
         .then(res => res.json())
         .then(user => this.setState({user: user}))
     }
