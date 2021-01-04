@@ -4,26 +4,26 @@ import Timeline from './Timeline'
 export default class Profile extends Component {
     
         state = {
-            user: {}
+            users: []
             
         }
      
     componentDidMount(){
-        fetch('http://localhost:3000/users/9')
+        fetch('http://localhost:3000/users')
         .then(res => res.json())
-        .then(user => this.setState({user: user}))
+        .then(userArr => this.setState({users: userArr}))
     }
 
-    getPosts = () => {
-        fetch('http://localhost:3000/posts')
-        .then(res => res.json())
-        .then(postsArr => this.setState({posts: postsArr}))
-    }
+    // getPosts = () => {
+    //     fetch('http://localhost:3000/posts')
+    //     .then(res => res.json())
+    //     .then(postsArr => this.setState({posts: postsArr}))
+    // }
     render() {
 
         return (
             <div>
-                <UserCard user={this.state.user} />
+                {this.state.users.map(user => <UserCard user={user} />)}
                 {/* <Timeline user={this.state.user}  /> */}
             </div>
         )
