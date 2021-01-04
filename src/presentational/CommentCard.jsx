@@ -6,17 +6,17 @@ export default function CommentCard(props) {
 
   return (
     <div>
-      <div class="ui comments">
+      <div className="ui comments">
         
-        <div class="comment">
-          {/* <div class="avatar">
+        <div className="comment">
+          {/* <div className="avatar">
             <img src="/images/avatar/small/matt.jpg" />
           </div> */}
-          <div class="content">
-            <a class="author">{props.comment.user.username}</a>
-            <div class="text">{props.comment.body}</div>
-            <div class="actions">
-              <a class="">Reply</a>
+          <div className="content">
+            <a className="author">{props.comment.user.username}</a>
+            <div className="text">{props.comment.body}</div>
+            <div className="actions">
+              <a className="">Reply</a>
             </div>
           </div>
         </div>

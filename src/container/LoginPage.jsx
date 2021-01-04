@@ -23,7 +23,7 @@ export default class LoginPage extends Component {
         
         return (
             <div>
-                <LoginForm loginForm={this.loginForm}/>
+                <LoginForm />
             </div>
         )
     }

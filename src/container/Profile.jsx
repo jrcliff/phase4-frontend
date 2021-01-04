@@ -23,7 +23,7 @@ export default class Profile extends Component {
 
         return (
             <div>
-                {this.state.users.map(user => <UserCard user={user} />)}
+                {this.state.users.map((user, index) => <UserCard user={user} key={index} />)}
                 {/* <Timeline user={this.state.user}  /> */}
             </div>
         )

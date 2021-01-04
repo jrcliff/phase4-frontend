@@ -3,12 +3,12 @@ import React from 'react';
 const CommentForm = (props) => {
     return (
         <div>
-            <form onSubmit={() => props.addComment} class="ui reply form">
-        <div class="field">
+            <form onSubmit={() => props.addComment} className="ui reply form">
+        <div className="field">
             <textarea rows="3"></textarea>
           </div>
-          <button type='submit' class="ui icon primary left labeled button">
-            <i aria-hidden="true" class="edit icon"></i>Add Reply
+          <button type='submit' className="ui icon primary left labeled button">
+            <i aria-hidden="true" className="edit icon"></i>Add Reply
           </button>
         </form>
         </div>

@@ -25,7 +25,7 @@ export default function PostCard(props) {
           </Item.Content>
         </Item>
       </Item.Group>
-      <h3 class="ui dividing header">Comments</h3>
+      <h3 className="ui dividing header">Comments</h3>
       {props.post.comments.map(comment => <CommentCard comment={comment} key={comment.id} />)}
       <CommentForm addComment={handleAddComment} />
     </div>

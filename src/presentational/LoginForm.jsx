@@ -11,36 +11,35 @@ import {
 export default class loginForm extends Component {
   state = {
     username: "",
+    current_user: []
   };
-  
+
   submitForm = (event) => {
-    
-    const username = {username: this.state.username}
+    const username = { username: this.state.username };
     console.log(username);
-        
-    
-    //userPostArray is an Array of objects 
+
+    //userPostArray is an Array of objects
     //Each object has an object of user and post
     //User object has attributes of personal info
     //Post object is an Array of objects which then have attributes about each post
     //iterate through each user and check if the username entired matches
-    //if true render Timeline 
+    //if true render Timeline
     //Timeline will be Posts
     //Else alert sign up
+  };
+
+  submitCallback() {
+    let username = this.state.username;
+    let reqObj = {
+      headers: { "Content-Type": "application/json" },
+      method: "POST",
+      body: JSON.stringify({username}),
+    };
+    fetch("http://localhost:3000/login", reqObj)
+      .then((res) => res.json())
+      .then((user) => console.log(user));
   }
 
-  submitCallback(){
-    let username = this.state.username 
-    let reqObj = {headers: {'Content-Type': 'application/json'} , method: 'POST' , body: JSON.stringify(username)}
-    fetch('http://localhost:3000/login', reqObj)
-    .then(res => res.json())
-    .then(username => console.log(username))
-    
-  }
-  
-  handleChange(event){
-    this.setState({username: event.target.value})
-  }
 
   render() {
     return (
@@ -63,8 +62,9 @@ export default class loginForm extends Component {
                 icon="user"
                 iconPosition="left"
                 placeholder="Username"
-                onChange={(event) => this.setState({username: event.target.value})}
-                // onSubmit={(event) => this.props.loginForm(event.target.value)}
+                onChange={(event) =>
+                  this.setState({ username: event.target.value })
+                }
               />
               {/* <Form.Input
                     fluid
@@ -74,7 +74,12 @@ export default class loginForm extends Component {
                     type='password'
                   /> */}
 
-              <Button onClick={() => this.submitCallback()} color="blue" fluid size="large">
+              <Button
+                onClick={() => this.submitCallback()}
+                color="blue"
+                fluid
+                size="large"
+              >
                 Login
               </Button>
             </Segment>
