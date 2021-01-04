@@ -17,19 +17,7 @@ export default class LoginPage extends Component {
         }))
     }
 
-    loginForm = (username) => {
-        let userPostArray = this.state.users
-        console.log(userPostArray)
-        console.log(username);
-        //userPostArray is an Array of objects 
-        //Each object has an object of user and post
-        //User object has attributes of personal info
-        //Post object is an Array of objects which then have attributes about each post
-        //iterate through each user and check if the username entired matches
-        //if true render Timeline 
-        //Timeline will be Posts
-        //Else alert sign up
-    }
+    
 
     render() {
         
