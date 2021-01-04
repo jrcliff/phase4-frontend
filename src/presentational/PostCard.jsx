@@ -1,5 +1,6 @@
 import React, { Component } from "react";
 import CommentCard from "./CommentCard";
+import CommentForm from './CommentForm';
 import { Image as ImageComponent, Item } from 'semantic-ui-react'
 
 export default function PostCard(props) {
@@ -8,6 +9,10 @@ export default function PostCard(props) {
     //     let postsArr = props.user.posts
     //     return postsArr.map((post) => <Item.Description> {post.body}</Item.Description>)
     // }
+    let handleAddComment = () => {
+      
+      console.log('hello') 
+    }
   return (
     <div className="post">
       <Item.Group link>
@@ -20,7 +25,9 @@ export default function PostCard(props) {
           </Item.Content>
         </Item>
       </Item.Group>
+      <h3 class="ui dividing header">Comments</h3>
       {props.post.comments.map(comment => <CommentCard comment={comment} key={comment.id} />)}
+      <CommentForm addComment={handleAddComment} />
     </div>
   );
 }
