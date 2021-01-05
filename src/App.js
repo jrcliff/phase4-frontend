@@ -1,23 +1,31 @@
+import React, { Component } from 'react'
 import './App.css';
+import { BrowserRouter} from 'react-router-dom'
+
 import LoginPage from './container/LoginPage'
 import Home from './container/Home'
-import {useState} from 'react'
 
-function App() {
 
-  
 
-  const [user, setUser] = useState({})
+export default class App extends Component {
 
-  return (
-    <div className="App">
-      <header className="App-header">
-        <LoginPage setUser={setUser}/>
-        <Home user={user}/>
-      </header>
-      
-    </div>
-  );
+  state ={
+    user: {}
+  }
+
+  setUser = (user) =>{
+    this.setState({
+      user: user
+    })
+  }
+
+
+  render() {
+    return (
+      <div className="App">
+      <BrowserRouter exact path="/" render={() => <LoginPage setUser={this.setUser}/>}/>
+        <Home user={this.state.user}/>
+      </div>
+    )
+  }
 }
-
-export default App;
