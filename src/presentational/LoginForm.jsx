@@ -11,21 +11,12 @@ import {
 export default class loginForm extends Component {
   state = {
     username: "",
-    current_user: []
+    current_user: [],
   };
 
   submitForm = (event) => {
     const username = { username: this.state.username };
     console.log(username);
-
-    //userPostArray is an Array of objects
-    //Each object has an object of user and post
-    //User object has attributes of personal info
-    //Post object is an Array of objects which then have attributes about each post
-    //iterate through each user and check if the username entired matches
-    //if true render Timeline
-    //Timeline will be Posts
-    //Else alert sign up
   };
 
   submitCallback() {
@@ -33,13 +24,16 @@ export default class loginForm extends Component {
     let reqObj = {
       headers: { "Content-Type": "application/json" },
       method: "POST",
-      body: JSON.stringify({username}),
+      body: JSON.stringify({ username }),
     };
     fetch("http://localhost:3000/login", reqObj)
       .then((res) => res.json())
-      .then((user) => console.log(user));
+      .then((user) =>
+        {this.setState({
+          current_user: user,
+        }); this.props.setUser(user)}
+      );
   }
-
 
   render() {
     return (
@@ -52,10 +46,7 @@ export default class loginForm extends Component {
           <Header as="h2" color="blue" textAlign="center">
             Welcome to Gamerbook!
           </Header>
-          <Form
-            size="large"
-            // onSubmit={(event) => this.submitForm(event.target.value)}
-          >
+          <Form size="large">
             <Segment stacked>
               <Form.Input
                 fluid

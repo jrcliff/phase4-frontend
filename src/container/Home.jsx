@@ -6,7 +6,9 @@ export default class Home extends Component {
 
     state = {
         users: [],
-        posts: []
+        posts: [],
+        current_user: [],
+        username: ""
     }
 
     componentDidMount(){
@@ -27,7 +29,7 @@ export default class Home extends Component {
     render() {
         return (
             <div>
-                <Profile />
+                <Profile user={this.props.user}/>
                 <Timeline users={this.state.users} addCommentHandler={this.handleAddComment} posts={this.state.posts}/>
             </div>
         )
