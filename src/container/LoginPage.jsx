@@ -4,17 +4,9 @@ import LoginForm from '../presentational/LoginForm'
 export default class LoginPage extends Component {
 
     state = {
-        users: [],
-        logged: false
-    }
-
-    componentDidMount(){
-        let url = "http://localhost:3000/users"
-        fetch(url)
-        .then(resp => resp.json())
-        .then(users => this.setState({
-            users: users
-        }))
+        current_user: [],
+        logged: false,
+        username: ""
     }
 
     
@@ -23,7 +15,7 @@ export default class LoginPage extends Component {
         
         return (
             <div>
-                <LoginForm />
+                <LoginForm setUser={this.props.setUser}/>
             </div>
         )
     }

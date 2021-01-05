@@ -1,23 +1,19 @@
 import './App.css';
 import LoginPage from './container/LoginPage'
 import Home from './container/Home'
+import {useState} from 'react'
 
 function App() {
 
   
-  // let login = () => {
-  //   if (this.state.isLoggedIn){
-  //     return <Home />
-  //   }else{
-  //     return <LoginPage />
-  //   }
-  // } 
-  
+
+  const [user, setUser] = useState({})
+
   return (
     <div className="App">
       <header className="App-header">
-        <LoginPage />
-        <Home />
+        <LoginPage setUser={setUser}/>
+        <Home user={user}/>
       </header>
       
     </div>
