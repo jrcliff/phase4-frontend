@@ -34,7 +34,10 @@ export default class Home extends Component {
         return (
             <div>
                 <Profile user={this.props.user}/>
-                <Timeline updateTimeline={this.updateTimeline} users={this.state.users} addCommentHandler={this.handleAddComment} posts={this.state.posts}/>
+                <Timeline 
+                updateTimeline={this.updateTimeline}
+                currentUser={this.props.user}
+                users={this.state.users} addCommentHandler={this.handleAddComment} posts={this.state.posts} />
             </div>
         )
     }

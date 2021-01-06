@@ -20,12 +20,12 @@ export default class CreatePostForm extends Component {
           headers: {'Content-Type': 'application/json'},
           body: JSON.stringify({
             body: data,
-            user_id: 10
+            user_id: this.props.currentUser.id
           })
         }
         fetch('http://localhost:3000/posts', reqObj)
         .then(res => res.json())
-        .then(post => this.setState(post)
+        .then(post => this.setState(post))
         // .then(comment => this.setState({user: comment.user.username}))
     
       }
@@ -44,7 +44,7 @@ export default class CreatePostForm extends Component {
     const { post } = this.state
 
     return (
-      <div>
+      <div className="postform">
       {post}
         <Form onSubmit={this.handleSubmit}>
           <Form.Group>
