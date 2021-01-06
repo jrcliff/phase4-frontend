@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import './App.css';
-import { BrowserRouter} from 'react-router-dom'
+import {  Route } from 'react-router-dom'
 
 import LoginPage from './container/LoginPage'
 import Home from './container/Home'
@@ -21,10 +21,10 @@ export default class App extends Component {
 
 
   render() {
-    return (
+    return ( 
       <div className="App">
-      <BrowserRouter exact path="/" render={() => <LoginPage setUser={this.setUser}/>}/>
-        <Home user={this.state.user}/>
+      <Route exact path="/login" render={() => <LoginPage setUser={this.setUser}/>}/>
+      <Route exact path="/timeline" render={() => <Home user={this.state.user}/>}/>
       </div>
     )
   }
