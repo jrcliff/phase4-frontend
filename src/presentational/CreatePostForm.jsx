@@ -25,7 +25,7 @@ export default class CreatePostForm extends Component {
         }
         fetch('http://localhost:3000/posts', reqObj)
         .then(res => res.json())
-        .then(post => console.log(post))
+        .then(post => this.setState(post)
         // .then(comment => this.setState({user: comment.user.username}))
     
       }

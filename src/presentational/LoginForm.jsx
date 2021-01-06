@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import RegistrationForm from './RegistrationForm'
 import {
   Button,
   Form,
@@ -33,6 +34,10 @@ export default class loginForm extends Component {
           current_user: user,
         }); this.props.setUser(user)}
       );
+  }
+
+  registerPath(path){
+    
   }
 
   render() {
@@ -76,9 +81,11 @@ export default class loginForm extends Component {
                   </Link>
             </Segment>
           </Form>
+          <Link to='/registration' >
           <Message>
             New to us? <a href="#">Sign Up</a>
           </Message>
+          </Link>
         </Grid.Column>
       </Grid>
     );

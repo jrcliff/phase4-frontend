@@ -15,7 +15,7 @@ export default class Timeline extends Component {
   render() {
     return (
       <div>
-        <CreatePostForm />
+        
         {this.props.posts.map((post, index) => <PostCard user={post.user} post={post} key={index}/>)}
       </div>
     );
