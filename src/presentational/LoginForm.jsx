@@ -7,7 +7,7 @@ import {
   Message,
   Segment,
 } from "semantic-ui-react";
-
+import {Link} from 'react-router-dom'
 export default class loginForm extends Component {
   state = {
     username: "",
@@ -64,7 +64,7 @@ export default class loginForm extends Component {
                     placeholder='Password'
                     type='password'
                   /> */}
-
+                  <Link to="/timeline"> 
               <Button
                 onClick={() => this.submitCallback()}
                 color="blue"
@@ -73,6 +73,7 @@ export default class loginForm extends Component {
               >
                 Login
               </Button>
+                  </Link>
             </Segment>
           </Form>
           <Message>
