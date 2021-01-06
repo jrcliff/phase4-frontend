@@ -33,7 +33,7 @@ export default class UserCard extends Component {
                 </a>
               </Card.Content>
             </Card>
-            <CreatePostForm currentUser={this.props.user}/>
+            <CreatePostForm updateTimeline={this.props.updateTimeline} currentUser={this.props.user}/>
           </div>
         )
     }

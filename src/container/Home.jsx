@@ -25,17 +25,23 @@ export default class Home extends Component {
         .then(postArr => this.setState({posts: postArr}))
     }
 
-    updateTimeline= (post) => {
-        this.setState({posts: [...this.state.posts, post]})
+    updateTimeline = (post) => {
+       this.setState({posts: [...this.state.posts, post]})
     }
+    updateComments = (comment) => {
+        
+    }
+
+
+  
 
 
     render() {
         return (
             <div>
-                <Profile user={this.props.user}/>
+                <Profile updateTimeline={this.updateTimeline} user={this.props.user}/>
                 <Timeline 
-                updateTimeline={this.updateTimeline}
+                
                 currentUser={this.props.user}
                 users={this.state.users} addCommentHandler={this.handleAddComment} posts={this.state.posts} />
             </div>

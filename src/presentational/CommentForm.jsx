@@ -14,7 +14,7 @@ class CommentForm extends Component {
   handleSubmit = (event) => {
     event.preventDefault()   
     const data = this.state.comment
-    console.log(data)
+
     let reqObj = {
       method: 'POST',
       headers: {'Content-Type': 'application/json'},
@@ -26,9 +26,9 @@ class CommentForm extends Component {
     }
     fetch('http://localhost:3000/comments', reqObj)
     .then(res => res.json())
-    .then(comment => console.log(comment))
+    .then(comment => this.props.setComments([...this.props.comments, comment]))
     // .then(comment => this.setState({user: comment.user.username}))
-
+    
   }
 
 
@@ -42,11 +42,11 @@ class CommentForm extends Component {
   }
  
   render() {
-    const {comment} = this.state
+   
     return (
       <div>
       
-        {comment}
+  
         <div>
             <form onSubmit={this.handleSubmit} className="ui reply form">
         <div className="field">

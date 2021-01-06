@@ -1,10 +1,15 @@
-import React, { Component } from "react";
+import React, { Component, useState, useEffect } from "react";
 import CommentCard from "./CommentCard";
 import CommentForm from './CommentForm';
 import { Image as ImageComponent, Item } from 'semantic-ui-react'
 
 export default function PostCard(props) {
 
+  const [comments, setComments] = useState([]);
+  useEffect(() => {
+    setComments(props.post.comments)
+    
+  }, []);
     // let renderPosts = () => {
     //     let postsArr = props.user.posts
     //     return postsArr.map((post) => <Item.Description> {post.body}</Item.Description>)
@@ -23,8 +28,8 @@ export default function PostCard(props) {
         </Item>
       </Item.Group>
       <h3 className="ui dividing header">Comments</h3>
-      {props.post.comments.map(comment => <CommentCard comment={comment} key={comment.id} />)}
-      <CommentForm post={props.post.id} currentUser={props.currentUser} />
+      {comments ? comments.map(comment => <CommentCard comment={comment} key={comment.id} />) : null}
+      <CommentForm comments={comments} setComments={setComments} updateTimeline={props.updateTimeline} post={props.post.id} currentUser={props.currentUser} />
     </div>
   );
 }
