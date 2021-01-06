@@ -11,8 +11,8 @@ export default function PostCard(props) {
     // }
    
   return (
-    <div className="post">
-      <Item.Group link>
+    <div className="post" >
+      <Item.Group link >
         <Item>
           {/* <Item.Image size='tiny' src='/images/avatar/large/stevie.jpg' /> */}
 
