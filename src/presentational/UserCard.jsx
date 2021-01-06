@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { Card, Icon, Image } from "semantic-ui-react";
+import CreatePostForm from './CreatePostForm'
 
 export default class UserCard extends Component {
 
@@ -10,7 +11,7 @@ export default class UserCard extends Component {
     render() {
       {this.friendCount()}
         return (
-            <div>
+            <div className="userCard">
             <Card>
               <Image src={this.props.user.profile_pic} wrapped ui={false} />
               {/*  */}
@@ -32,6 +33,7 @@ export default class UserCard extends Component {
                 </a>
               </Card.Content>
             </Card>
+            <CreatePostForm currentUser={this.props.user}/>
           </div>
         )
     }

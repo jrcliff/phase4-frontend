@@ -44,7 +44,7 @@ export default class CreatePostForm extends Component {
     const { post } = this.state
 
     return (
-      <div>
+      <div className="postform">
       {post}
         <Form onSubmit={this.handleSubmit}>
           <Form.Group>
