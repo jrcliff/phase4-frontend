@@ -9,10 +9,7 @@ export default function PostCard(props) {
     //     let postsArr = props.user.posts
     //     return postsArr.map((post) => <Item.Description> {post.body}</Item.Description>)
     // }
-    let handleAddComment = () => {
-      
-      console.log('hello') 
-    }
+   
   return (
     <div className="post">
       <Item.Group link>
@@ -27,7 +24,7 @@ export default function PostCard(props) {
       </Item.Group>
       <h3 className="ui dividing header">Comments</h3>
       {props.post.comments.map(comment => <CommentCard comment={comment} key={comment.id} />)}
-      <CommentForm addComment={handleAddComment} />
+      <CommentForm post={props.post.id} />
     </div>
   );
 }

@@ -1,8 +1,10 @@
 import React, { Component } from "react";
 import PostCard from "../presentational/PostCard";
+import CreatePostForm from '../presentational/CreatePostForm'
 
 
 export default class Timeline extends Component {
+
 
     // renderUsers = () => {
     //     let users = this.props.users
@@ -13,7 +15,7 @@ export default class Timeline extends Component {
   render() {
     return (
       <div>
-        {/* {console.log(this.props.posts)} */}
+        <CreatePostForm />
         {this.props.posts.map((post, index) => <PostCard user={post.user} post={post} key={index}/>)}
       </div>
     );
