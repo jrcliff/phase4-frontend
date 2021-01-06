@@ -24,7 +24,7 @@ export default class App extends Component {
     return ( 
       <div className="App">
       <Route exact path="/" render={() => <LoginPage setUser={this.setUser}/>}/>
-      <Route exact path="/timeline" render={() => <Home user={this.state.user}/>}/>
+      <Route exact path="/timeline" render={() => <Home user={this.state.user} />}/>
       </div>
     )
   }

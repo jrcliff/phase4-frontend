@@ -20,7 +20,7 @@ class CommentForm extends Component {
       headers: {'Content-Type': 'application/json'},
       body: JSON.stringify({
         body: data,
-        user_id: 10,
+        user_id: this.props.currentUser.id,
         post_id: this.props.post
       })
     }
