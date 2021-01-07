@@ -4,12 +4,8 @@ import CreatePostForm from './CreatePostForm'
 
 export default class UserCard extends Component {
 
-  friendCount(){
-    console.log(this.props.user);
-    console.log(this.props.user.frienders?.length)
-  }
+
     render() {
-      {this.friendCount()}
         return (
             <div className="userCard">
             <Card>

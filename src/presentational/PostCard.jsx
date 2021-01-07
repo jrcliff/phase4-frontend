@@ -10,11 +10,7 @@ export default function PostCard(props) {
     setComments(props.post.comments)
     
   }, []);
-    // let renderPosts = () => {
-    //     let postsArr = props.user.posts
-    //     return postsArr.map((post) => <Item.Description> {post.body}</Item.Description>)
-    // }
-   
+ 
   return (
     <div className="post" >
       <Item.Group link >

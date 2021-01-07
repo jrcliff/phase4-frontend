@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import { Form, Input } from 'semantic-ui-react'
+import { Button, Form, Input } from 'semantic-ui-react'
+import Route from 'react-router-dom'
 
 class RegistrationForm extends Component {
     constructor(props){
@@ -30,9 +31,6 @@ class RegistrationForm extends Component {
     
     
       handleInputChange = (event) => {
-        console.log(event)
-        console.log(event.target.name)
-        console.log(event.target.value)
         this.setState({
           [event.target.name]: event.target.value
         })
@@ -45,7 +43,9 @@ class RegistrationForm extends Component {
             <Form>
                 <Form.Field inline>
                 <label>username</label>
+                <Button>
                 <Input placeholder='username' name={this.state.username} />
+                </Button>
                 </Form.Field>
             </Form>
         );

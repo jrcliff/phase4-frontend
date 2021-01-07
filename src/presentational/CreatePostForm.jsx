@@ -14,7 +14,7 @@ export default class CreatePostForm extends Component {
       handleSubmit = (event) => {
         event.preventDefault()   
         const data = this.state.post
-        console.log(data)
+        // console.log(data)
         let reqObj = {
           method: 'POST',
           headers: {'Content-Type': 'application/json'},
@@ -32,26 +32,23 @@ export default class CreatePostForm extends Component {
     
     
       handleInputChange = (event) => {
-        console.log(event)
-        console.log(event.target.name)
-        console.log(event.target.value)
         this.setState({
           [event.target.name]: event.target.value
         })
       }
 
   render() {
-    const { post } = this.state
+    // const { post } = this.state
 
     return (
       <div className="postform">
-      {post}
+      {/* {this.state.post} */}
         <Form onSubmit={this.handleSubmit}>
           <Form.Group>
             
             <Form.Input
               placeholder='New Post'
-              value={post}
+              value={this.state.post}
               onChange={this.handleInputChange}
               name='post'
             />
