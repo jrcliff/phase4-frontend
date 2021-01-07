@@ -11,11 +11,15 @@ import Nav from './presentational/Nav'
 
 export default class App extends Component {
 
+  constructor(){
+    super()
+  }
   state ={
     user: {},
     loggedIn: false,
     username: ""
   }
+
 
   setUser = (user) =>{
     this.setState({
@@ -23,9 +27,9 @@ export default class App extends Component {
       loggedIn: true,
       username: user.username
     })
-    localStorage.setItem("user", JSON.stringify(this.state.user))
-    localStorage.setItem("loggedIn", this.state.loggedIn)
-    localStorage.setItem("username", this.state.username)
+    localStorage.setItem("user", JSON.stringify(user))
+    localStorage.setItem("loggedIn", true )
+    localStorage.setItem("username", user.username)
   }
 
   logOut = () => {
@@ -34,6 +38,8 @@ export default class App extends Component {
       loggedIn: false,
       username: ""
     })
+    localStorage.clear()
+    console.log(this.state)
   }
 
 
@@ -42,9 +48,8 @@ export default class App extends Component {
     return ( 
       <div className="App">
       <Route exact path="/" render={() => <LoginPage setUser={this.setUser}/>}/>
-      <Route exact path="/timeline" render={() => <Home user={this.state.user}/>}/>
+      <Route exact path="/timeline" render={() => <Home user={this.state.user} logOut={this.logOut}/> } />
       <Route exact path='/registration' component={<RegistrationForm />} />
-      {/* <Route path="/" component={<Nav />}/> */}
       </div>
     )
   }

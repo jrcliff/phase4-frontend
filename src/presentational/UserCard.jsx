@@ -10,16 +10,13 @@ export default class UserCard extends Component {
             <div className="userCard">
             <Card>
               <Image src={this.props.user.profile_pic} wrapped ui={false} />
-              {/*  */}
               <Card.Content>
                 <Card.Header>{this.props.user.username }</Card.Header>
-                {/* */}
                 <Card.Meta>
                   <span className="date">Joined in 2015</span>
                 </Card.Meta>
                 <Card.Description>
                   Games I'm Currently Playing: {this.props.user.current_games}
-                  {/*  */}
                 </Card.Description>
               </Card.Content>
               <Card.Content extra>

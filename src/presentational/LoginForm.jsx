@@ -8,11 +8,11 @@ import {
   Message,
   Segment,
 } from "semantic-ui-react";
-import {Link} from 'react-router-dom'
+import {Link, Redirect} from 'react-router-dom'
 export default class loginForm extends Component {
   state = {
     username: "",
-    current_user: [],
+    current_user: "",
   };
 
   submitForm = (event) => {
@@ -36,12 +36,11 @@ export default class loginForm extends Component {
       );
   }
 
-  registerPath(path){
-    
-  }
+
 
   render() {
     return (
+      this.state.current_user != "" ? <Redirect to="/timeline"/> : 
       <Grid 
         textAlign="center"
         style={{ height: "100vh" }}
@@ -69,7 +68,7 @@ export default class loginForm extends Component {
                     placeholder='Password'
                     type='password'
                   /> */}
-                  <Link to="/timeline"> 
+                  {/* <Link to="/timeline">  */}
               <Button
                 onClick={() => this.submitCallback()}
                 color="blue"
@@ -78,7 +77,7 @@ export default class loginForm extends Component {
               >
                 Login
               </Button>
-                  </Link>
+                  {/* </Link> */}
             </Segment>
           </Form>
           <Link to='/registration' >

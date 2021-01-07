@@ -8,10 +8,11 @@ export default function PostCard(props) {
   const [comments, setComments] = useState([]);
   useEffect(() => {
     setComments(props.post.comments)
-    
+    console.log(props.post)
   }, []);
  
   return (
+    
     <div className="post" >
       <Item.Group link >
         <Item>

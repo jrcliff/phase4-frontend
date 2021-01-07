@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import Timeline from './Timeline'
 import Profile from './Profile'
+import Nav from '../presentational/Nav'
 
 export default class Home extends Component {
 
@@ -39,6 +40,7 @@ export default class Home extends Component {
     render() {
         return (
             <div>
+                <Nav logOut={this.props.logOut}/>
                 <Profile updateTimeline={this.updateTimeline} user={this.props.user}/>
                 <Timeline 
                 
