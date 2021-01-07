@@ -19,7 +19,7 @@ export default function PostCard(props) {
     <div className="post" >
       <Item.Group link >
         <Item>
-          {/* <Item.Image size='tiny' src='/images/avatar/large/stevie.jpg' /> */}
+          <Item.Image size='tiny' position='relative' src={props.user.profile_pic} />
 
           <Item.Content>
             <Item.Header>{props.post.user.username}</Item.Header>
