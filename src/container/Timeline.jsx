@@ -15,7 +15,7 @@ export default class Timeline extends Component {
     return (
       <div className="timeline">
         {/* <CreatePostForm currentUser={this.props.currentUser}/> */}
-        {this.props.posts.sort((a, b) => a.key < b.key ? 1:-1).map((post, index) => <PostCard deletePost={this.props.deletePost} updateTimeline={this.props.updateTimeline} user={post.user} post={post} key={index} currentUser={this.props.currentUser}/>)}
+        {this.props.posts.sort((a, b) => a.key < b.key ? 1:-1).map((post, index) => <PostCard handleDelete={this.props.handleDelete} updateTimeline={this.props.updateTimeline} user={post.user} post={post} key={index} currentUser={this.props.currentUser}/>)}
       </div>
     );
   }
