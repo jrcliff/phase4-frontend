@@ -20,6 +20,13 @@ export default class App extends Component {
     username: ""
   }
 
+  // useEffect(() => {
+  //   const loggedInUser = localStorage.getItem("user");
+  //   if (loggedInUser) {
+  //     const foundUser = JSON.parse(loggedInUser);
+  //     setUser(foundUser);
+  //   }
+  // }, []);
 
   setUser = (user) =>{
     this.setState({
@@ -40,6 +47,18 @@ export default class App extends Component {
     })
     localStorage.clear()
     console.log(this.state)
+  }
+
+  deletePost = (event) => {
+    event.preventDefault()
+    console.log(event.target.value)
+    // fetch(`http://localhost:3000/posts/${event.target.value.id}`)
+  }
+
+  handleDelete = (event) => {
+    console.log('this is your delete button')
+    console.log(event)
+    console.log(event.target.value)
   }
 
 

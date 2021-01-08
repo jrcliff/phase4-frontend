@@ -2,13 +2,13 @@ import React, { Component, useState, useEffect } from "react";
 import CommentCard from "./CommentCard";
 import CommentForm from './CommentForm';
 import { Image as ImageComponent, Item } from 'semantic-ui-react'
-
+import DeletePostButton from './DeletePostButton'
 export default function PostCard(props) {
 
   const [comments, setComments] = useState([]);
   useEffect(() => {
     setComments(props.post.comments)
-    console.log(props.post)
+    
   }, []);
  
   return (
@@ -22,6 +22,7 @@ export default function PostCard(props) {
             <Item.Header>{props.post.user.username}</Item.Header>
             <Item.Description>{ props.post.body }</Item.Description>
           </Item.Content>
+          <DeletePostButton onClick={(event) => props.deletePost} key={props.post.id} />
         </Item>
       </Item.Group>
       <h3 className="ui dividing header">Comments</h3>
