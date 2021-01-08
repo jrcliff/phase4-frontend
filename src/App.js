@@ -11,10 +11,8 @@ import Nav from './presentational/Nav'
 
 export default class App extends Component {
 
-  constructor(){
-    super()
-  }
-  state ={
+
+  state = {
     user: {},
     loggedIn: false,
     username: ""
@@ -34,9 +32,7 @@ export default class App extends Component {
       loggedIn: true,
       username: user.username
     })
-    localStorage.setItem("user", JSON.stringify(user))
-    localStorage.setItem("loggedIn", true )
-    localStorage.setItem("username", user.username)
+
   }
 
   logOut = () => {
