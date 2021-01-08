@@ -37,10 +37,14 @@ export default class Home extends Component {
     updateComments = (comment) => {
         
     }
-    handleDelete = (event) => {
+    handleDelete = (post) => {
+        
         console.log('this is your delete button')
-        console.log(event)
-        console.log(event.target.value)
+        let deletedPost = this.state.posts.filter(thePost => thePost !== post)
+        
+        fetch(`http://localhost:3000/posts/${post.id}`, {method: 'DELETE'})
+        this.setState({posts: deletedPost})
+
       }
 
 
@@ -53,7 +57,7 @@ export default class Home extends Component {
                 <Nav logOut={this.props.logOut}/>
                 <Profile updateTimeline={this.updateTimeline} user={this.props.user}/>
                 <Timeline 
-                deletePost={this.handleDelete}
+                handleDelete={this.handleDelete}
                 currentUser={this.props.user}
                 users={this.state.users} addCommentHandler={this.handleAddComment} posts={this.state.posts} />
             </div>

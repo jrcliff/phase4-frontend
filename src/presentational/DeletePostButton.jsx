@@ -4,7 +4,7 @@ import { Button, Icon } from 'semantic-ui-react'
 const DeletePostButton = (props) => {
     return (
         <div>
-            <Button animated>
+            <Button onClick={() => props.handleDelete(props.post)} animated>
             <Button.Content visible>Delete</Button.Content>
             <Button.Content hidden>
                 <Icon name='trash' />
