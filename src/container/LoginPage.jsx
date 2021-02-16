@@ -15,7 +15,7 @@ export default class LoginPage extends Component {
         
         return (
             <div>
-                <LoginForm setUser={this.props.setUser}/>
+                <LoginForm setUser={this.props.setUser} currentUser={this.props.currentUser} />
             </div>
         )
     }

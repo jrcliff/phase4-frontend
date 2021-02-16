@@ -2,13 +2,14 @@ import React, { Component } from 'react'
 import Timeline from './Timeline'
 import Profile from './Profile'
 import Nav from '../presentational/Nav'
+import LoginPage from './LoginPage'
 
 export default class Home extends Component {
 
     state = {
         users: [],
         posts: [],
-        current_user: [],
+        current_user: JSON.parse(sessionStorage.getItem('currentUser')) || null,
         username: ""
     }
 
@@ -31,6 +32,7 @@ export default class Home extends Component {
         let newPostsList = [...this.state.posts, post]
         let sortedList = newPostsList.sort((a, b) => a.id > b.id ? 1:-1)
         this.setState({posts: sortedList})
+      
     }
     
 
@@ -55,10 +57,10 @@ export default class Home extends Component {
         return (
             <div>
                 <Nav logOut={this.props.logOut}/>
-                <Profile updateTimeline={this.updateTimeline} user={this.props.user}/>
+                <Profile updateTimeline={this.updateTimeline} user={this.state.current_user}/>
                 <Timeline 
                 handleDelete={this.handleDelete}
-                currentUser={this.props.user}
+                currentUser={this.state.current_user}
                 users={this.state.users} addCommentHandler={this.handleAddComment} posts={this.state.posts} />
             </div>
         )

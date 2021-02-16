@@ -7,6 +7,7 @@ export default function PostCard(props) {
 
   const [comments, setComments] = useState([]);
   useEffect(() => {
+    console.log(props.post.comments);
     setComments(props.post.comments)
     
   }, []);

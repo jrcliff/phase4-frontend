@@ -29,18 +29,17 @@ export default class loginForm extends Component {
     };
     fetch("http://localhost:3000/login", reqObj)
       .then((res) => res.json())
-      .then((user) =>
-        {this.setState({
-          current_user: user,
-        }); this.props.setUser(user)}
-      );
-  }
+      .then((user) => sessionStorage.setItem('currentUser', JSON.stringify({user})))
+      .then((user) => this.setState({
+        current_user: user 
+      }))
+      }
 
 
 
   render() {
     return (
-      this.state.current_user != "" ? <Redirect to="/timeline"/> : 
+      this.state.current_user != '' ? <Redirect to="/timeline"/> : 
       <Grid 
         textAlign="center"
         style={{ height: "100vh" }}

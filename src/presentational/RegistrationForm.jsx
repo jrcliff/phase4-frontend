@@ -13,7 +13,7 @@ class RegistrationForm extends Component {
       
       handleSubmit = (event) => {
         event.preventDefault()   
-        const data = this.state.userame
+        const data = this.state.username
         console.log(data)
         let reqObj = {
           method: 'POST',

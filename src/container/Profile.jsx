@@ -8,7 +8,7 @@ export default class Profile extends Component {
 
         return (
             <div>
-                <UserCard updateTimeline={this.props.updateTimeline} user={this.props.user}/>
+                <UserCard posts={this.props.posts} updateTimeline={this.props.updateTimeline} user={this.props.user}/>
             </div>
         )
     }
